@@ -20,9 +20,9 @@ ckeditor = CKEditor(app)
 Bootstrap(app)
 
 # CONNECT TO DB                        'sqlite:///blog.db'
+db = SQLAlchemy(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
 
 # FLASK_LOGIN
 login_manager = LoginManager()
