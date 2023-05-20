@@ -15,7 +15,7 @@ import os
 
 db = SQLAlchemy()
 app = Flask(__name__)
-app.app_context().push()
+# app.app_context().push()
 
 app.config['SECRET_KEY'] = os.environ.get("FLASK_SECRET_KEY")
 ckeditor = CKEditor(app)
@@ -78,7 +78,7 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey("blog_posts.id"))
     parent_post = relationship("BlogPost", back_populates="comments")
 
-db.create_all()
+# db.create_all()
 
 #    •☽────✧˖°˖☆˖°˖✧────☾••☽────✧˖°˖☆˖°˖✧────☾••☽────✧˖°˖☆˖°˖✧────☾••☽────✧˖°˖☆˖°˖✧────☾••☽────✧˖°˖☆˖°˖✧────☾•    #
 
